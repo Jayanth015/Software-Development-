@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buyer Lead Intake</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: #f9fafb;
+            min-height: 100vh;
+        }
+        
+        .nav {
+            background-color: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 4rem;
+        }
+        
+        .nav-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #111827;
+        }
+        
+        .nav-user {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+        
+        .main {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1.5rem 1rem;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            color: #6b7280;
+        }
+        
+        .buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background-color: #2563eb;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #1d4ed8;
+        }
+        
+        .btn-secondary {
+            background-color: #e5e7eb;
+            color: #1f2937;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #d1d5db;
+        }
+        
+        .features {
+            margin-top: 3rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .feature-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #111827;
+        }
+        
+        .feature-card p {
+            color: #6b7280;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-content">
+                <div>
+                    <h1 class="nav-title">Buyer Lead Intake</h1>
+                </div>
+                <div>
+                    <span class="nav-user">Demo User</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <main class="main">
+        <div class="hero">
+            <h1>Welcome to Buyer Lead Intake</h1>
+            <p>Manage your buyer leads efficiently</p>
+            <div class="buttons">
+                <a href="#" class="btn btn-primary" onclick="showMessage('View All Leads')">
+                    View All Leads
+                </a>
+                <a href="#" class="btn btn-secondary" onclick="showMessage('Add New Lead')">
+                    Add New Lead
+                </a>
+            </div>
+        </div>
+        
+        <div class="features">
+            <div class="feature-card">
+                <h3>📝 Lead Management</h3>
+                <p>Create, read, update, and delete buyer leads with a simple and intuitive interface.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🔍 Advanced Filtering</h3>
+                <p>Filter leads by city, property type, status, timeline, and search by name or phone.</p>
+            </div>
+            <div class="feature-card">
+                <h3>📊 CSV Import/Export</h3>
+                <p>Bulk import leads from CSV files and export filtered results for analysis.</p>
+            </div>
+            <div class="feature-card">
+                <h3>📈 Change History</h3>
+                <p>Track all changes made to buyer records with detailed history and timestamps.</p>
+            </div>
+            <div class="feature-card">
+                <h3>✅ Form Validation</h3>
+                <p>Client and server-side validation ensures data integrity and user experience.</p>
+            </div>
+            <div class="feature-card">
+                <h3>📱 Responsive Design</h3>
+                <p>Works perfectly on desktop, tablet, and mobile devices with responsive design.</p>
+            </div>
+        </div>
+    </main>
+    
+    <script>
+        function showMessage(action) {
+            alert(`${action} feature will be available in the full application!\n\nThis is a demo of the Buyer Lead Intake application.`);
+        }
+        
+        // Add some interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Buyer Lead Intake App loaded successfully!');
+            
+            // Add hover effects to feature cards
+            const cards = document.querySelectorAll('.feature-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-2px)';
+                    this.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '0 1px 3px rgba(0,0,0,0.1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
